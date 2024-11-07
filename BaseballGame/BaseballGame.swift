@@ -13,8 +13,9 @@ struct BaseballGame {
     
     
         func start() {
-            let answer = makeAnswer()
-    
+            let answer = makeAnswer() //함수를 호출하여 3자리의 정답 숫자 배열을 생성합니다.
+            
+            // 게임의 시작과 규칙을 안내합니다.
             print("< 게임을 시작합니다 > ")
             print("숫자 야구 게임의 규칙은 다음과 같습니다:")
             print("- 3자리 숫자를 맞추세요.")
@@ -25,21 +26,24 @@ struct BaseballGame {
     
             print(input)
             
-            while true {
-                print("숫자를 입력하세요:")
+            while true { // 게임이 종료될 때까지 계속 반복하는 구조
                 
-                let input = userInput()
+                print("숫자를 입력하세요:") // 숫자를 입력할 수 있도록 메세지를 출력
                 
-                if input.isEmpty {
-                    continue
+                let input = userInput() // userInput() 함수가 호출되어 입력을 받고, 입력값은 정수 배열로 반환
+                
+                if input.isEmpty { // if input.isEmpty는 input이 빈 배열인지 확인
+                    continue // 빈 입력은 무시하고 다시 입력을 요청
                 }
                 
-                let hint = calculateHint(answer: answer, guess: input)
-                print("힌트: \(hint.strike) 스트라이크, \(hint.ball) 볼")
+                // 힌트 계산
+                let hint = calculateHint(answer: answer, guess: input) // answer과 입력한 값 input을 비교하여 힌트를 계산한다.
                 
-                if hint.strike == 3 {
-                    print("정답입니다.")
-                    break
+                print("힌트: \(hint.strike) 스트라이크, \(hint.ball) 볼") // 힌트를 출력
+                
+                if hint.strike == 3 { // 힌트에서 strike가 3이라면 사용자가 정답을 맞춤
+                    print("정답입니다.") // 정답 메시지를 출력
+                    break // break를 호출하여 while 루프를 종료합니다.
                 }
             }
         }

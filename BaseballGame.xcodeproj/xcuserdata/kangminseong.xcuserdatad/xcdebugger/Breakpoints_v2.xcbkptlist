@@ -14,10 +14,10 @@
             filePath = "BaseballGame/BaseballGame.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "BaseballGame"
-            landmarkType = "14">
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "userInput()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
